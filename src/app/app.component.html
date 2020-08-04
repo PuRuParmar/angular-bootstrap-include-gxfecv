@@ -1,0 +1,24 @@
+<hello name="{{ name }}"></hello>
+
+<div class="row pt-2 m-2">
+	<div class="col-md-2">
+		<div class="list-group list-group-flush border">
+			<input type="search" class="form-control" placeholder="Search..." [(ngModel)]="searchText">
+			<div class="m-0 p-0" *ngFor="let cat of lib.categories"> <a
+					*ngIf="(lib.applets| searchFilter: searchText | catFilter : cat).length" (click)="onClickTab(cat)"
+					href="#"
+					class='list-group-item list-group-item-action {{cat===currentCategory?"active":""}}'>{{cat}}
+					<span class="badge badge-secondary badge-pill">{{(lib.applets| searchFilter: searchText | catFilter : cat).length}}</span></a>
+			</div>
+
+
+		</div>
+	</div>
+	<div class="col-md-10">
+		<ul class="list-group">
+			<li *ngFor="let app of lib.applets |  searchFilter: searchText | catFilter : currentCategory"
+				class="list-group-item ">
+				{{app.name}}</li>
+		</ul>
+	</div>
+</div>
