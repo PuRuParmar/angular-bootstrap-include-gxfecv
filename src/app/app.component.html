@@ -1,6 +1,8 @@
 <hello name="{{ name }}"></hello>
 
 <div class="row pt-2 m-2">
-<left-app [lib]="lib" [currentCategory]="currentCategory"></left-app>
-<right-app [lib]="lib" [currentCategory]="currentCategory"></right-app>
+	<left-app [lib]="lib" [currentCategory]="currentCategory" [searchText]="searchText" (onChangeSearch)='onChangeSearch($event)'
+		(onChangeTab)='onClickTab($event)'></left-app>
+	<right-app [lib]="lib" [currentCategory]="currentCategory" [searchText]="searchText"
+		></right-app>
 </div>

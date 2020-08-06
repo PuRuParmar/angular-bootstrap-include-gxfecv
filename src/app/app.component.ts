@@ -1,15 +1,41 @@
-import { Component, Input} from "@angular/core";
+import { Component } from "@angular/core";
 
 @Component({
-  selector: "left-app",
-  templateUrl: "./left.component.html",
+  selector: "my-app",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"]
 })
-export class LeftComponent {
-  @Input() lib:any; 
-  @Input() currentCategory:any
+export class AppComponent {
+  lib = {
+    categories: ["Performance", "Investments", "Operations"],
+    applets: [
+      {
+        name: "Performance Snapshot",
+        categories: ["Performance"]
+      },
+      {
+        name: "Commitment Widget",
+        categories: ["Investments"]
+      },
+      {
+        name: "CMS",
+        categories: ["Investments", "Performance"]
+      },
+      {
+        name: "ZYX",
+        categories: ["Investments", "Performance","Operations"]
+      }
+    ]
+  };
+  currentCategory=this.lib.categories[0]?this.lib.categories[0]:"";
+  searchText="";
   name = "Angular";
-  onClickTab(category){;
+  onClickTab(category){
+   console.log(category);
     this.currentCategory=category;
+  }
+  onChangeSearch(searchStr){
+    this.searchText=searchStr;
   }
   clickMe() {
     alert("Bootstap working");

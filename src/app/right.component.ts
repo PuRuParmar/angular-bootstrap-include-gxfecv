@@ -1,16 +1,15 @@
-import { Component,Input } from "@angular/core";
+import { Component, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
   selector: "right-app",
-  templateUrl: "./right.component.html",
+  templateUrl: "./right.component.html"
 })
 export class RightComponent {
-  @Input() lib:any; 
-  @Input() currentCategory:any;
+  @Input() lib: any;
+  @Input() currentCategory: any;
+  @Input() searchText: string;
   name = "Angular";
-  onClickTab(category){
-    this.currentCategory=category;
-  }
+  
   clickMe() {
     alert("Bootstap working");
   }
