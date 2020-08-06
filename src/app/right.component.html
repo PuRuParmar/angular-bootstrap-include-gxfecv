@@ -1,0 +1,7 @@
+	<div class="col-md-10">
+		<ul class="list-group">
+			<li *ngFor="let app of lib.applets |  searchFilter: searchText | catFilter : currentCategory"
+				class="list-group-item ">
+				{{app.name}}</li>
+		</ul>
+	</div>

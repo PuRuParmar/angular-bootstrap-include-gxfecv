@@ -6,7 +6,7 @@ import { Component, Input} from "@angular/core";
 })
 export class LeftComponent {
   @Input() lib:any; 
-  @Input() currentCategory:any
+  @Input() currentCategory:any;
   name = "Angular";
   onClickTab(category){;
     this.currentCategory=category;
